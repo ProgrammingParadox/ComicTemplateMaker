@@ -6,6 +6,10 @@ html, body {
 	padding: 0px;
 }
 
+body {
+	background-color: #dceafe;
+}
+
 #canvas {
 	background: white;
 
@@ -16,19 +20,22 @@ html, body {
 
 #page {
 	padding: 10px;
+
+	height: 90%;
 	
 	display: flex;
 
 	flex-align: center;
 	justify-content: center;
+	align-items: center;
 
 	gap: 10px;
 }
 
 #options {
-	background: #f0f0f0;
+	background: #fff3c7;
 
-	border: solid 1px #DDD;
+	border: solid 1px #a28639;
 	border-radius: 10px;
 
 	width: fit-content;
@@ -40,7 +47,7 @@ html, body {
 	padding: 10px;
 
 	&:not(:last-child){
-		border-bottom: solid 1px #DDD;
+		border-bottom: solid 1px #a28639;
 	}
 }
 
