@@ -10,6 +10,7 @@ let options = {
 	"padding": document.getElementById("option-format-padding"),
 	"spacing": document.getElementById("option-format-spacing"),
 	"rows": document.getElementById("option-format-rows"),
+	"thickness": document.getElementById("option-format-thickness"),
 
 	"relativeWidth": document.getElementById("option-cur-width")
 };
@@ -397,6 +398,14 @@ function updateOptions(){
 		yOff += cur.eheight + parseFloat(options.spacing);
 
 		//cur.ey = parseFloat(options.padding);
+	}
+
+	for(let r = 0; r<panels.length; r++){
+		for(let p = 0; p<panels[r].panels.length; p++){
+			let c = panels[r].panels[p].element;
+
+			c.setAttribute("stroke-width", options.thickness);
+		}
 	}
 }
 
