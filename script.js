@@ -52,7 +52,7 @@ function createPanel(x, y, w, h, p){
 
 		"fill": "white",
 		"stroke": "black",
-		"stroke-width": "0.05"
+		"stroke-width": options.thickness
 	});
 
 	panel.addEventListener("mouseenter", function(){
