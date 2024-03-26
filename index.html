@@ -9,51 +9,56 @@
 </head>
 
 <body>
+	<div id="page">
+		<div id="options">
+			<div id="option-size">
+				<div class="option-title">Size</div>
+				<div class="option-options">
+					<input value="8.5" type="number" class="option-option" id="option-size-width" />
+					<input value="11" type="number" class="option-option" id="option-size-height" />
+				</div>
+			</div>
+			<div id="option-format">
+				<div class="option-title">Format</div>
+				<div class="option-options">
+					<label for="option-format-padding">Padding</label>
+					<input value="0.25" type="number" class="option-option" id="option-format-padding" />
+	
+					<label for="option-format-padding">Panel spacing</label>
+					<input value="0.25" type="number" class="option-option" id="option-format-spacing" />
+	
+					<label for="option-format-padding">Rows</label>
+					<input value="5" type="number" class="option-option" id="option-format-rows" />
+				</div>
+			</div>
+	
+			<div id="option-current-panel">
+				<div class="option-title">Current Panel</div>
+				<div class="option-options">
+					<label for="option-cur-width">Relative width</label>
+					<input value="1" type="number" class="option-option" id="option-cur-width" />
+					<button class="option-option" id="option-cur-delete">delete</button>
+					<button class="option-option" id="option-cur-ar">add to the right</button>
+				</div>
+			</div>
+	
+			<div id="option-export">
+				<div class="option-title">Export</div>
+				<div class="option-options">
+					<button class="option-option" id="option-export-svg">export svg</button>
+					<button class="option-option" id="option-export-png">export png</button>
+				</div>
+			</div>
 
-	<div id="options">
-		<div id="option-size">
-			<div class="option-title">Size</div>
-			<div class="option-options">
-				<input value="8.5" type="number" class="option-option" id="option-size-width" />
-				<input value="11" type="number" class="option-option" id="option-size-height" />
+			<div id="instructions">
+				Click on a box to select it and change its properties.
 			</div>
 		</div>
-		<div id="option-format">
-			<div class="option-title">Format</div>
-			<div class="option-options">
-				<label for="option-format-padding">Padding</label>
-				<input value="0.25" type="number" class="option-option" id="option-format-padding" />
-
-				<label for="option-format-padding">Panel spacing</label>
-				<input value="0.25" type="number" class="option-option" id="option-format-spacing" />
-
-				<label for="option-format-padding">Rows</label>
-				<input value="5" type="number" class="option-option" id="option-format-rows" />
-			</div>
-		</div>
-
-		<div id="option-current-panel">
-			<div class="option-title">Current Panel</div>
-			<div class="option-options">
-				<label for="option-cur-width">Relative width</label>
-				<input value="1" type="number" class="option-option" id="option-cur-width" />
-				<button class="option-option" id="option-cur-delete">delete</button>
-				<button class="option-option" id="option-cur-ar">add to the right</button>
-			</div>
-		</div>
-
-		<div id="option-export">
-			<div class="option-title">Export</div>
-			<div class="option-options">
-				<button class="option-option" id="option-export-svg">export svg</button>
-				<button class="option-option" id="option-export-png">export png</button>
-			</div>
-		</div>
+	
+		<svg id="canvas" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+			
+		</svg>
 	</div>
-
-	<svg id="canvas" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
-		
-	</svg>
 	
   <script src="script.js"></script>
 </body>
