@@ -1,6 +1,4 @@
 
-import tinycolor from "./tinycolor.js";
-
 let canvas = document.getElementById("canvas");
 
 let selectedPanel = null;
@@ -13,8 +11,6 @@ let options = {
 	"spacing": document.getElementById("option-format-spacing"),
 	"rows": document.getElementById("option-format-rows"),
 	"thickness": document.getElementById("option-format-thickness"),
-
-	"curBackgroundColor": document.getElementById("option-cur-background"),
 
 	"relativeWidth": document.getElementById("option-cur-width")
 };
@@ -61,20 +57,19 @@ function createPanel(x, y, w, h, p){
 
 	panel.addEventListener("mouseenter", function(){
 		if(panel.className.baseVal != "selected")
-			panel.setAttribute("fill", tinycolor(p.backgroundColor).darken().toHexString());
+			panel.setAttribute("fill", "#EEE");
 	});
 	panel.addEventListener("mouseleave", function(){
 		if(panel.className.baseVal != "selected")
-			panel.setAttribute("fill", p.backgroundColor);
+			panel.setAttribute("fill", "white");
 	});
 
 	panel.addEventListener("click", function(){
-		panel.setAttribute("fill", tinycolor.mix(tinycolor(p.backgroundColor).lighten(), "#33EE99", 10).toHexString());
+		panel.setAttribute("fill", "#3E9");
 
 		select(panel, p);
 
 		options.relativeWidth = selectedPanel.width;
-		options.backgroundColor = selectedPanel.backgroundColor;
 	});
 
 	return panel;
@@ -85,8 +80,6 @@ class Panel {
 		this.y = 0;
 		this.width = width;
 		this.height = 1;
-
-		this.backgroundColor = "#FFFFFF";
 		
 		this.element = createPanel(this.x, this.y, width, this.height, this);
 		canvas.appendChild(this.element);
@@ -230,7 +223,7 @@ function initExport(){
 			let c = panels[r].panels[p].element;
 
 			c.className.baseVal = "";
-			c.setAttribute("fill", panels[r].panels[p].backgroundColor);
+			c.setAttribute("fill", "white");
 		}
 	}
 }
@@ -308,7 +301,7 @@ function select(panel, p){
 			if(c == panel) continue;
 			
 			c.className.baseVal = "";
-			c.setAttribute("fill", panels[r].panels[p].backgroundColor);
+			c.setAttribute("fill", "white");
 		}
 	}
 
@@ -363,13 +356,8 @@ function setSize(width, height){
 function updateOptions(){
 	setSize(options.width, options.height);
 
-	if(selectedPanel != null){
-		selectedPanel.width = parseFloat(options.relativeWidth);
-		options.relativeWidth = selectedPanel.width;
-
-		selectedPanel.backgroundColor = options.curBackgroundColor;
-		selectedPanel.element.setAttribute("fill", tinycolor.mix(tinycolor(selectedPanel.backgroundColor).lighten(), "#33EE99", 10).toHexString());
-	}
+	selectedPanel == null ? 0 : selectedPanel.width = parseFloat(options.relativeWidth);
+	selectedPanel == null ? 0 : options.relativeWidth = selectedPanel.width;
 
 	let rows = parseFloat(options.rows);
 	if(rows >= 1){
@@ -418,7 +406,6 @@ function updateOptions(){
 		for(let p = 0; p<panels[r].panels.length; p++){
 			let c = panels[r].panels[p].element;
 
-			c.setAttribute("fill", panels[r].panels[p].backgroundColor);
 			c.setAttribute("stroke-width", options.thickness);
 		}
 	}
