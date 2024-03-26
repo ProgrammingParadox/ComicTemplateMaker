@@ -216,6 +216,8 @@ let panels = [
 ];
 
 function initExport(){
+	selectedPanel = null;
+	
 	for(let r = 0; r<panels.length; r++){
 		for(let p = 0; p<panels[r].panels.length; p++){
 			let c = panels[r].panels[p].element;
@@ -408,6 +410,14 @@ function updateOptions(){
 		}
 	}
 }
+
+document.getElementById("option-size-swap").addEventListener("click", function(){
+	let temp = options.width;
+	options.width = options.height;
+	options.height = temp;
+
+	updateOptions();
+});
 
 window.addEventListener("load", function(){
 	updateOptions();
