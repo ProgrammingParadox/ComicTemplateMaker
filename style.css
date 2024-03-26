@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#canvas {
+	background: white;
+
+	border: 1px solid black;
+
+	max-width: 30em;
+}
+
+.option-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+input[type="number"] {
+	width: 4em;
+}
