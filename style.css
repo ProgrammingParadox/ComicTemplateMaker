@@ -1,13 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 html, body {
   height: 100%;
   width: 100%;
 
 	margin: 0px;
 	padding: 0px;
+
+	font-family: 'Noto Sans', sans-serif;
 }
 
 body {
 	background-color: #dceafe;
+}
+
+button {
+	border: solid 1px #a28639;
+	border-radius: 20000px;
+
+	background: #fff3c7;
+
+	padding: 3px 7px;
+
+	&:hover {
+		background: #f0e0a5;
+	}
 }
 
 #canvas {
@@ -60,4 +78,11 @@ body {
 
 input[type="number"] {
 	width: 4em;
+
+	border: solid 1px #a28639;
+	border-radius: 20000px;
+
+	background: #fffcf0;
+
+	padding: 3px 7px;
 }
